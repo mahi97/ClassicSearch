@@ -28,6 +28,16 @@ public:
 		
 		va_end(ap);
 	}
+	
+	bool operator==(const State& _other) {
+		for (int i = 0; i < 9 ; i++) {
+			if (puzzle[i] != reinterpret_cast<const PuzzleState&>(_other).puzzle[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	int puzzle[9];
 	virtual void name() {};
 };

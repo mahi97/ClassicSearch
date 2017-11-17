@@ -2,14 +2,15 @@
 // Created by Mohammad Mahdi Rahimi on 11/17/17.
 //
 
+#include <iostream>
 #include "ProblemPuzzle.h"
 
 State* ProblemPuzzle::initialState() {
 	PuzzleState* p = new PuzzleState(
 			9,
-			0, 1, 2,
-			3, 4, 5,
-			6, 7, 8
+			2, 5, 8,
+			1, 4, 7,
+			0, 3, 6
 	);
 	return p;
 }
@@ -17,11 +18,13 @@ State* ProblemPuzzle::initialState() {
 State* ProblemPuzzle::nextState(State* currentState, const int &action) {
 	int i;
 	for (i = 0; i < 9; i++) if (reinterpret_cast<PuzzleState*>(currentState)->puzzle[i] == 0) break;
-	swapPuzzle(i, action, reinterpret_cast<PuzzleState*>(currentState));
-	return currentState;
+	PuzzleState* temp= new PuzzleState(*reinterpret_cast<PuzzleState*>(currentState));
+	swapPuzzle(i, action, temp);
+	return temp;
 }
 
 bool ProblemPuzzle::goalTest(State* _state) {
+	
 	for (int i = 0; i < 9 ; i++) if (reinterpret_cast<PuzzleState*>(_state)->puzzle[i] != i) return false;
 	return true;
 }
@@ -39,7 +42,7 @@ std::vector<int> ProblemPuzzle::actions(State* _state) {
 	int i;
 	for (i = 0; i < 9; i++) if (reinterpret_cast<PuzzleState*>(_state)->puzzle[i] == 0) break;
 	if (i < 6)      vec.push_back(UP);
-	if (i > 3)      vec.push_back(DOWN);
+	if (i >= 3)      vec.push_back(DOWN);
 	if (i % 3 != 2) vec.push_back(LEFT);
 	if (i % 3 != 0) vec.push_back(RIGHT);
 	return vec;
@@ -51,7 +54,7 @@ void ProblemPuzzle::swapPuzzle(int i, int action, PuzzleState* _puzzle) {
 			if (i < 6) std::swap(_puzzle->puzzle[i], _puzzle->puzzle[i+3]);
 			break;
 		case DOWN:
-			if (i > 3) std::swap(_puzzle->puzzle[i], _puzzle->puzzle[i-3]);
+			if (i >= 3) std::swap(_puzzle->puzzle[i], _puzzle->puzzle[i-3]);
 			break;
 		case LEFT:
 			if (i % 3 != 2) std::swap(_puzzle->puzzle[i], _puzzle->puzzle[i+1]);

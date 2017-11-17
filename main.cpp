@@ -10,6 +10,5 @@ int main(int argc, char* argv[]) {
 	
 	ProblemSolver problemSolver{argv[1], argv[2], (argv + 3)};
 	problemSolver.run();
-	problemSolver.getResult();
 	return 0;
 }

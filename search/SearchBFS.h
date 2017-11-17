@@ -8,6 +8,7 @@
 
 #include <Search.h>
 #include <queue>
+#include <list>
 
 class SearchBFS : public Search {
 public:
@@ -19,11 +20,8 @@ protected:
 	virtual void search();
 	
 private:
-	std::queue<State*>  f;
+	std::list<State*>  f;
 	std::vector<State*> e;
-	
-	
-	
 	
 };
 

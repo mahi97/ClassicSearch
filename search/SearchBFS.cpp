@@ -2,6 +2,7 @@
 // Created by Mohammad Mahdi Rahimi on 11/17/17.
 //
 
+#include <iostream>
 #include "SearchBFS.h"
 
 SearchBFS::SearchBFS(bool isGraph) : Search(isGraph) {
@@ -9,7 +10,7 @@ SearchBFS::SearchBFS(bool isGraph) : Search(isGraph) {
 }
 
 void SearchBFS::execute() {
-	f.push(problem->initialState());
+	f.push_back(problem->initialState());
 	if (isGraph) searchG();
 	else search();
 }
@@ -17,35 +18,38 @@ void SearchBFS::execute() {
 void SearchBFS::search() {
 	while (! f.empty() ) {
 		State* s = f.front();
-		f.pop();
+		f.pop_front();
+
 		if (problem->goalTest(s)) {
 			result.answer = s;
 			return;
 		}
 		
 		for (auto& action : problem->actions(s)) {
-			f.push(problem->nextState(s, action));
+			f.push_back(problem->nextState(s, action));
 		}
-		search();
-		
 	}
 }
 
 void SearchBFS::searchG() {
 	while (! f.empty() ) {
 		State* s = f.front();
-		f.pop();
+		f.pop_front();
 		if (problem->goalTest(s)) {
 			result.answer = s;
 			return;
 		}
-		
 		for (auto& action : problem->actions(s)) {
-			for (auto node : e) if (node == s) continue;
-			f.push(problem->nextState(s, action));
+			bool temp = false;
+			for (auto node : e) {
+				if (*node == *s) {
+					temp = true;
+					break;
+				}
+			}
+			if (temp) continue;
+			f.push_back(problem->nextState(s, action));
 		}
 		e.push_back(s);
-		search();
-		
 	}
 }
