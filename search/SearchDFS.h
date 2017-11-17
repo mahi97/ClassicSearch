@@ -12,7 +12,9 @@ class SearchDFS : public Search {
 public:
 	SearchDFS(bool isGraph);
 	virtual void execute();
-	
+
+protected:
+	void search();
 };
 
 

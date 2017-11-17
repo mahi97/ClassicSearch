@@ -12,6 +12,9 @@ class SearchBidirect : public Search {
 public:
 	SearchBidirect(bool isGraph);
 	virtual void execute();
+
+protected:
+	void search();
 	
 };
 

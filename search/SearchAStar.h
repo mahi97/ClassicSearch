@@ -12,7 +12,9 @@ class SearchAStar : public Search{
 public:
 	SearchAStar(bool isGraph);
 	virtual void execute();
-	
+
+protected:
+	void search();
 };
 
 

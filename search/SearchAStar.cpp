@@ -9,3 +9,7 @@ SearchAStar::SearchAStar(bool isGraph) : Search(isGraph) {}
 void SearchAStar::execute() {
 	
 }
+
+void SearchAStar::search() {
+	
+}

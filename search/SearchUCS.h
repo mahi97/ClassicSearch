@@ -12,7 +12,9 @@ class SearchUCS : public Search{
 public:
 	SearchUCS(bool isGraph);
 	virtual void execute();
-	
+
+protected:
+	void search();
 };
 
 

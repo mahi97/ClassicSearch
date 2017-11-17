@@ -9,3 +9,7 @@ SearchDFS::SearchDFS(bool isGraph) : Search(isGraph) {}
 void SearchDFS::execute() {
 	
 }
+
+void SearchDFS::search() {
+	
+}

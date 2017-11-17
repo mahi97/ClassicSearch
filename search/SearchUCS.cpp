@@ -9,3 +9,7 @@ SearchUCS::SearchUCS(bool isGraph) : Search(isGraph) {}
 void SearchUCS::execute() {
 	
 }
+
+void SearchUCS::search() {
+	
+}

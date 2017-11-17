@@ -9,3 +9,7 @@ SearchBidirect::SearchBidirect(bool isGraph) : Search(isGraph) {}
 void SearchBidirect::execute() {
 	
 }
+
+void SearchBidirect::search() {
+	
+}
