@@ -4,7 +4,6 @@
 
 #include "Problem.h"
 
-
-//double Problem::pathCost(std::vector<int> path) {
-//	return 0;
-//}
+Problem::~Problem() {
+	
+}

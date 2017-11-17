@@ -11,3 +11,7 @@ void Search::setProblem(Problem *_problem) {
 Search::Search(bool isGraph) {
 	this->isGraph = isGraph;
 }
+
+Search::~Search() {
+	
+}

@@ -14,7 +14,7 @@
 class ProblemSolver {
 public:
 	ProblemSolver(const char* problem, const char* search, char* argv[]);
-	~ProblemSolver();
+	virtual ~ProblemSolver();
 	void run();
 	Result getResult();
 private:

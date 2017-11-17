@@ -25,9 +25,9 @@ Result ProblemSolver::getResult() {
 
 void ProblemSolver::setSearch(const char *_search, char* argv[]) {
 	bool isGraph = (*argv[0] == 'G' || *argv[0] == 'g');
-	if (_search == "BFS") {
+	if (strcmp(_search ,"BFS") == 0) {
 		search = new SearchBFS(isGraph);
-	} else if (_search == "DFS") {
+	} else if (strcmp(_search ,"DFS")) {
 		switch (atoi(argv[1])) {
 			case -1:
 				search = new SearchDFS(isGraph);
@@ -39,24 +39,24 @@ void ProblemSolver::setSearch(const char *_search, char* argv[]) {
 				search = new SearchDFSX(isGraph, (unsigned int) atoi(argv[1]));
 				break;
 		}
-	} else if (_search == "UCS") {
+	} else if (strcmp(_search ,"UCS") == 0) {
 		search = new SearchUCS(isGraph);
 		
-	} else if (_search == "BID") {
+	} else if (strcmp(_search ,"BID") == 0) {
 		search = new SearchBidirect(isGraph);
 		
-	} else if (_search == "A*") {
+	} else if (strcmp(_search ,"A*") == 0) {
 		search = new SearchAStar(isGraph);
 		
 	}
 }
 
 void ProblemSolver::setProblem(const char *_problem) {
-	if (_problem == "Nav") {
+	if (strcmp(_problem ,"Nav") == 0) {
 		problem = new ProblemNavigation;
-	} else if (_problem == "Water") {
+	} else if (strcmp(_problem, "Water") == 0) {
 		problem = new ProblemWater;
-	} else if (_problem == "Puzzle") {
+	} else if (strcmp(_problem,"Puzzle") == 0) {
 		problem = new ProblemPuzzle;
 	}
 }
