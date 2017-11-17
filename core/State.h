@@ -10,6 +10,7 @@ class State {
 public:
 	State();
 	~State();
+	virtual void name() = 0;
 private:
 };
 

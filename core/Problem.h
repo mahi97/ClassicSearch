@@ -12,11 +12,12 @@
 class Problem {
 public:
 	virtual ~Problem();
-	virtual State initialStart() = 0;
-	virtual State nextState(const State& currentState, const int& action) = 0;
-	virtual State goalTest(const State& _state) = 0;
+	virtual State* initialState() = 0;
+	virtual State* nextState(State* currentState, const int& action) = 0;
+	virtual bool goalTest(State* _state) = 0;
 	virtual double pathCost(std::vector<int> path) = 0;
-	virtual double stepCost(const State& firstState, const int& action, const State& secondState)= 0;
+	virtual std::vector<int> actions(State* _state) = 0;
+	virtual double stepCost(State* firstState, const int& action, State* secondState)= 0;
 private:
 	std::vector<State> states;
 };

@@ -15,6 +15,8 @@ struct Result {
 	double pathCost;
 	int maxMemoryUsage;
 	double time;
+	State* answer;
+	
 	
 };
 
@@ -25,11 +27,14 @@ public:
 	void setProblem(Problem* _problem);
 	virtual void execute() = 0;
 	Result result;
-private:
+protected:
 	Problem* problem;
 	bool isGraph;
 	std::vector<State*> openedList;
 	std::vector<State*> closedList;
+
+	virtual void search() = 0;
+	
 };
 
 
