@@ -6,6 +6,7 @@
 #define SEARCH_PROJECT_SEARCH_H
 
 
+#include <list>
 #include "Problem.h"
 
 struct Result {
@@ -31,7 +32,7 @@ protected:
 	Problem* problem;
 	bool isGraph;
 	std::vector<State*> openedList;
-	std::vector<State*> closedList;
+	std::list<const State*> e;
 
 	virtual void search() = 0;
 	

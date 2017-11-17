@@ -53,7 +53,15 @@ void ProblemSolver::setSearch(const char *_search, char* argv[]) {
 
 void ProblemSolver::setProblem(const char *_problem) {
 	if (strcmp(_problem ,"Nav") == 0) {
-		problem = new ProblemNavigation;
+		
+		problem = new ProblemNavigation
+				{
+						4, 3,
+						0, 1, 1,
+						1, 1, 1,
+						1, 0, 1,
+						1, 1, 0
+				};
 	} else if (strcmp(_problem, "Water") == 0) {
 		problem = new ProblemWater;
 	} else if (strcmp(_problem,"Puzzle") == 0) {

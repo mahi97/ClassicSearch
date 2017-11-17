@@ -6,9 +6,9 @@
 #define SEARCH_PROJECT_SEARCHDFS_H
 
 
-#include "SearchDFSX.h"
+#include <Search.h>
 
-class SearchDFS : public SearchDFSX {
+class SearchDFS : public Search {
 public:
 	SearchDFS(bool isGraph);
 	virtual void execute();

@@ -20,7 +20,6 @@ protected:
 	
 private:
 	std::list<State*>  f;
-	std::vector<State*> e;
 	
 };
 

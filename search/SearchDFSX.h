@@ -14,11 +14,10 @@ public:
 	SearchDFSX(bool isGraph, unsigned int depth);
 	virtual void execute();
 
-private:
+protected:
 	void search();
 	void search(const State* par, int depth);
 	unsigned int depth;
-	std::list<const State*> e;
 	
 };
 
