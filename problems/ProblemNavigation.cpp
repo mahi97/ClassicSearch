@@ -7,10 +7,10 @@
 State* ProblemNavigation::initialState() {
 }
 
-State* ProblemNavigation::nextState(State *currentState, const int &action) {
+State* ProblemNavigation::nextState(const State *currentState, const int &action) {
 }
 
-bool ProblemNavigation::goalTest(State *_state) {
+bool ProblemNavigation::goalTest(const State *_state) {
 }
 
 double ProblemNavigation::pathCost(std::vector<int> path) {
@@ -21,6 +21,6 @@ double ProblemNavigation::stepCost(State *firstState, const int &action, State* 
 	return 0;
 }
 
-std::vector<int> ProblemNavigation::actions(State *_state) {
+std::vector<int> ProblemNavigation::actions(const State *_state) {
 	
 }

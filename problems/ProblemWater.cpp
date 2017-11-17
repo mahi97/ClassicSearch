@@ -8,11 +8,11 @@ State* ProblemWater::initialState() {
 	return nullptr;
 }
 
-State* ProblemWater::nextState(State *currentState, const int &action) {
+State* ProblemWater::nextState(const State *currentState, const int &action) {
 	return nullptr;
 }
 
-bool ProblemWater::goalTest(State *_state) {
+bool ProblemWater::goalTest(const State *_state) {
 	return false;
 }
 
@@ -24,6 +24,6 @@ double ProblemWater::stepCost(State *firstState, const int &action, State *secon
 	return 0;
 }
 
-std::vector<int> ProblemWater::actions(State *_state) {
+std::vector<int> ProblemWater::actions(const State *_state) {
 	return std::vector<int, std::allocator<int>>();
 }

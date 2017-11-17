@@ -4,12 +4,16 @@
 
 #include "SearchDFS.h"
 
-SearchDFS::SearchDFS(bool isGraph) : Search(isGraph) {}
+SearchDFS::SearchDFS(bool isGraph) : SearchDFSX(isGraph, 0) {}
 
 void SearchDFS::execute() {
 	
 }
 
 void SearchDFS::search() {
+	
+}
+
+void SearchDFS::search(State *par) {
 	
 }

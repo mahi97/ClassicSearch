@@ -4,8 +4,8 @@
 
 #include "SearchDFSL.h"
 
-SearchDFSL::SearchDFSL(bool isGraph) : SearchDFS(isGraph) {}
+SearchDFSL::SearchDFSL(bool isGraph) : SearchDFSX(isGraph, 0) {}
 
 void SearchDFSL::execute() {
-	SearchDFS::execute();
+	SearchDFSX::execute();
 }

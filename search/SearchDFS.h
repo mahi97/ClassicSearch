@@ -6,15 +6,15 @@
 #define SEARCH_PROJECT_SEARCHDFS_H
 
 
-#include <Search.h>
+#include "SearchDFSX.h"
 
-class SearchDFS : public Search {
+class SearchDFS : public SearchDFSX {
 public:
 	SearchDFS(bool isGraph);
 	virtual void execute();
-
 protected:
 	void search();
+	void search(State* par);
 };
 
 

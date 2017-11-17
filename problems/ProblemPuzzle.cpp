@@ -8,24 +8,26 @@
 State* ProblemPuzzle::initialState() {
 	PuzzleState* p = new PuzzleState(
 			9,
-			2, 5, 8,
-			1, 4, 7,
-			0, 3, 6
+			0, 2, 5,
+			1, 4, 8,
+			3, 6, 7
 	);
 	return p;
 }
 
-State* ProblemPuzzle::nextState(State* currentState, const int &action) {
+State* ProblemPuzzle::nextState(const State* currentState, const int &action) {
 	int i;
-	for (i = 0; i < 9; i++) if (reinterpret_cast<PuzzleState*>(currentState)->puzzle[i] == 0) break;
-	PuzzleState* temp= new PuzzleState(*reinterpret_cast<PuzzleState*>(currentState));
+	for (i = 0; i < 9; i++) if (reinterpret_cast<const PuzzleState*>(currentState)->puzzle[i] == 0) break;
+	PuzzleState* temp= new PuzzleState(*reinterpret_cast<const PuzzleState*>(currentState));
 	swapPuzzle(i, action, temp);
+	temp->par = currentState;
+	temp->act = action;
 	return temp;
 }
 
-bool ProblemPuzzle::goalTest(State* _state) {
+bool ProblemPuzzle::goalTest(const State* _state) {
 	
-	for (int i = 0; i < 9 ; i++) if (reinterpret_cast<PuzzleState*>(_state)->puzzle[i] != i) return false;
+	for (int i = 0; i < 9 ; i++) if (reinterpret_cast<const PuzzleState*>(_state)->puzzle[i] != i) return false;
 	return true;
 }
 
@@ -37,10 +39,10 @@ double ProblemPuzzle::stepCost(State* firstState, const int &action, State* seco
 	return 1;
 }
 
-std::vector<int> ProblemPuzzle::actions(State* _state) {
+std::vector<int> ProblemPuzzle::actions(const State* _state) {
 	std::vector<int> vec;
 	int i;
-	for (i = 0; i < 9; i++) if (reinterpret_cast<PuzzleState*>(_state)->puzzle[i] == 0) break;
+	for (i = 0; i < 9; i++) if (reinterpret_cast<const PuzzleState*>(_state)->puzzle[i] == 0) break;
 	if (i < 6)      vec.push_back(UP);
 	if (i >= 3)      vec.push_back(DOWN);
 	if (i % 3 != 2) vec.push_back(LEFT);

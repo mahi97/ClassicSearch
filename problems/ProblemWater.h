@@ -11,10 +11,10 @@
 class ProblemWater : public Problem {
 public:
 	virtual State* initialState();
-	virtual State* nextState(State* currentState, const int& action);
-	virtual bool goalTest(State* _state);
+	virtual State* nextState(const State* currentState, const int& action);
+	virtual bool goalTest(const State* _state);
 	virtual double pathCost(std::vector<int> path);
-	virtual std::vector<int> actions(State* _state);
+	virtual std::vector<int> actions(const State* _state);
 	virtual double stepCost(State* firstState, const int& action, State* secondState);
 	
 };

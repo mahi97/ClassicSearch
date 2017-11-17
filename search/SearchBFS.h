@@ -16,7 +16,6 @@ public:
 	virtual void execute();
 
 protected:
-	virtual void searchG();
 	virtual void search();
 	
 private:
