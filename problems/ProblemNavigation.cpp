@@ -4,22 +4,23 @@
 
 #include "ProblemNavigation.h"
 
-State ProblemNavigation::initialStart() {
-	return State();
+State* ProblemNavigation::initialState() {
 }
 
-State ProblemNavigation::nextState(const State &currentState, const int &action) {
-	return State();
+State* ProblemNavigation::nextState(State *currentState, const int &action) {
 }
 
-State ProblemNavigation::goalTest(const State &_state) {
-	return State();
+bool ProblemNavigation::goalTest(State *_state) {
 }
 
 double ProblemNavigation::pathCost(std::vector<int> path) {
 	return 0;
 }
 
-double ProblemNavigation::stepCost(const State &firstState, const int &action, const State &secondState) {
+double ProblemNavigation::stepCost(State *firstState, const int &action, State* secondState) {
 	return 0;
+}
+
+std::vector<int> ProblemNavigation::actions(State *_state) {
+	
 }

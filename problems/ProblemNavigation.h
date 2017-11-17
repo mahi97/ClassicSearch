@@ -10,11 +10,12 @@
 
 class ProblemNavigation : public Problem {
 public:
-	virtual State initialStart();
-	virtual State nextState(const State& currentState, const int& action);
-	virtual State goalTest(const State& _state);
+	virtual State* initialState();
+	virtual State* nextState(State* currentState, const int& action);
+	virtual bool goalTest(State* _state);
 	virtual double pathCost(std::vector<int> path);
-	virtual double stepCost(const State& firstState, const int& action, const State& secondState);
+	virtual std::vector<int> actions(State* _state);
+	virtual double stepCost(State* firstState, const int& action, State* secondState);
 	
 };
 
