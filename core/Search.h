@@ -9,13 +9,13 @@
 #include "Problem.h"
 
 struct Result {
-	int nodeSeen;
-	int nodeExpand;
+	int nodeSeen = 0;
+	int nodeExpand = 0;
 	std::vector<int> path;
-	double pathCost;
-	int maxMemoryUsage;
-	double time;
-	State* answer;
+	double pathCost = 0;
+	double maxMemoryUsage = 0;
+	double time = 0;
+	const State* answer = nullptr;
 	
 	
 };

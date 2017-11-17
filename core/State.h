@@ -11,7 +11,9 @@ public:
 	State();
 	~State();
 	virtual void name() = 0;
-	virtual bool operator==(const State&) = 0;
+	virtual bool operator==(const State&) const = 0;
+	const State* par;
+	int act;
 private:
 };
 

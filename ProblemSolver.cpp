@@ -5,8 +5,8 @@
 #include "ProblemSolver.h"
 
 ProblemSolver::ProblemSolver(const char *problem, const char *search, char* argv[]) {
-	setProblem(problem);
 	setSearch(search, argv);
+	setProblem(problem);
 }
 
 ProblemSolver::~ProblemSolver() {
@@ -27,7 +27,7 @@ void ProblemSolver::setSearch(const char *_search, char* argv[]) {
 	bool isGraph = (*argv[0] == 'G' || *argv[0] == 'g');
 	if (strcmp(_search ,"BFS") == 0) {
 		search = new SearchBFS(isGraph);
-	} else if (strcmp(_search ,"DFS")) {
+	} else if (strcmp(_search ,"DFS") == 0) {
 		switch (atoi(argv[1])) {
 			case -1:
 				search = new SearchDFS(isGraph);

@@ -5,7 +5,8 @@
 #include "State.h"
 
 State::State() {
-	
+	par = nullptr;
+	act = -1;
 }
 
 State::~State() {
