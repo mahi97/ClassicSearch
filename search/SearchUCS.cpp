@@ -48,9 +48,8 @@ void SearchUCS::search() {
 		f.sort([&](const void* a, const void* b){
 			const State* first  = static_cast<const State*>(a);
 			const State* second = static_cast<const State*>(b);
-			if (problem->stepCost(first->par, first->act, first) < problem->stepCost(second->par, second->act, second)) return -1;
-			if (problem->stepCost(first->par, first->act, first) > problem->stepCost(second->par, second->act, second)) return  1;
-			return 0;
+			return problem->stepCost(first->par, first->act, first) >=
+			       problem->stepCost(second->par, second->act, second);
 		});
 		
 		e.push_back(s);

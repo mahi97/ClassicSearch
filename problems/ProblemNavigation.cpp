@@ -71,3 +71,7 @@ std::vector<int> ProblemNavigation::actions(const State *_state) {
 	if (nav->y != n-1 && field[nav->y + 1][nav->x] != 0) vec.push_back(MOVE_UP);
 	return vec;
 }
+
+double ProblemNavigation::h(const State * _state) {
+	return (m - 1 - dynamic_cast<const NavigationState*>(_state)->x) + (n - 1 - dynamic_cast<const NavigationState*>(_state)->y);
+}

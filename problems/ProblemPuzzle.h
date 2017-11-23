@@ -49,6 +49,7 @@ class ProblemPuzzle : public Problem {
 	virtual double pathCost(std::vector<int> path);
 	virtual std::vector<int> actions(const State* _state);
 	virtual double stepCost(const State* firstState, const int& action, const State* secondState);
+	virtual double h(const State*) {};
 
 private:
 	void swapPuzzle(int i, int action, PuzzleState*);
