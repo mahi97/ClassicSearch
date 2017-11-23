@@ -11,7 +11,7 @@ SearchDFSX::SearchDFSX(bool isGraph, unsigned int depth) : Search(isGraph) {
 
 void SearchDFSX::execute() {
 	search();
-	if (result.path.size())
+	if (!result.path.empty())
 		result.path.pop_back();
 	result.maxMemoryUsage = result.path.size() * sizeof(int);
 	result.pathCost = problem->pathCost(result.path);
@@ -50,5 +50,13 @@ void SearchDFSX::search(const State *node, int _depth) {
 
 void SearchDFSX::search() {
 	search(problem->initialState(), 0);
+}
+
+void SearchDFSX::setDepth(int depth) {
+	this->depth = depth;
+}
+
+int SearchDFSX::getDepth() {
+	return this->depth;
 }
 

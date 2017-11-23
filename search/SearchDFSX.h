@@ -13,11 +13,12 @@ class SearchDFSX : public Search {
 public:
 	SearchDFSX(bool isGraph, unsigned int depth);
 	virtual void execute();
-
+	void setDepth(int depth);
+	int  getDepth(void);
 protected:
 	void search();
 	void search(const State* par, int depth);
-	unsigned int depth;
+	int depth;
 	
 };
 

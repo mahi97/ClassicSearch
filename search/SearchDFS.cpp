@@ -4,10 +4,10 @@
 
 #include "SearchDFS.h"
 
-SearchDFS::SearchDFS(bool isGraph) : Search(isGraph) {}
+SearchDFS::SearchDFS(bool isGraph) : SearchDFSX(isGraph, INT_MAX) {}
 
 void SearchDFS::execute() {
-	
+	SearchDFSX::execute();
 }
 
 void SearchDFS::search() {

@@ -33,7 +33,7 @@ void ProblemSolver::setSearch(const char *_search, char* argv[]) {
 				search = new SearchDFS(isGraph);
 				break;
 			case 0:
-				search = new SearchDFS(isGraph);
+				search = new SearchDFSL(isGraph);
 				break;
 			default:
 				search = new SearchDFSX(isGraph, (unsigned int) atoi(argv[1]));
