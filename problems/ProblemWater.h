@@ -39,7 +39,7 @@ public:
 	virtual bool goalTest(const State* _state);
 	virtual double pathCost(std::vector<int> path);
 	virtual std::vector<int> actions(const State* _state);
-	virtual double stepCost(State* firstState, const int& action, State* secondState);
+	virtual double stepCost(const State* firstState, const int& action,const State* secondState);
 	
 };
 

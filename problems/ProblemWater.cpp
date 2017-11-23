@@ -54,7 +54,7 @@ double ProblemWater::pathCost(std::vector<int> path) {
 	return path.size();
 }
 
-double ProblemWater::stepCost(State *firstState, const int &action, State *secondState) {
+double ProblemWater::stepCost(const State *firstState, const int &action,const State *secondState) {
 	return 1;
 }
 
