@@ -56,11 +56,13 @@ void ProblemSolver::setProblem(const char *_problem) {
 		
 		problem = new ProblemNavigation
 				{
-						4, 3,
-						0, 1, 1,
-						1, 1, 1,
-						1, 0, 1,
-						1, 1, 0
+						5, 5,
+						1, 1, 1, 1, 1,
+						1, 0, 1, 0, 0,
+						1, 1, 1, 1, 1,
+						0, 0, 1, 0, 1,
+				        1, 1, 1, 1, 1,
+				        
 				};
 	} else if (strcmp(_problem, "Water") == 0) {
 		problem = new ProblemWater;
