@@ -18,9 +18,6 @@ public:
 protected:
 	virtual void search();
 	
-private:
-	std::list<State*>  f;
-	
 };
 
 

@@ -12,13 +12,10 @@
 struct Result {
 	int nodeSeen = 0;
 	int nodeExpand = 0;
-	std::vector<int> path;
+	std::list<int> path;
 	double pathCost = 0;
 	double maxMemoryUsage = 0;
-	double time = 0;
 	const State* answer = nullptr;
-	
-	
 };
 
 class Search {
@@ -31,10 +28,10 @@ public:
 protected:
 	Problem* problem;
 	bool isGraph;
-	std::vector<State*> openedList;
-	std::list<const State*> e;
-
 	virtual void search() = 0;
+	std::list<State*>  f;
+	std::list<State*>  e;
+	
 	
 };
 

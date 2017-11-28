@@ -9,8 +9,6 @@
 #include <searches.h>
 #include <string>
 
-
-
 class ProblemSolver {
 public:
 	ProblemSolver(const char* problem, const char* search, char* argv[]);

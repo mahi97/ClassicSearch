@@ -29,6 +29,7 @@ void SearchAStar::search() {
 			}
 			return;
 		}
+		
 		for (auto& action : problem->actions(s)) {
 			if (isGraph) {
 				bool temp = false;
@@ -59,8 +60,11 @@ void SearchAStar::search() {
 				g2++;
 				temp = temp->par;
 			}
-			return g1 + problem->h(first) >= g2 + problem->h(second);
+			return g1 + problem->h(first) < g2 + problem->h(second);
 		});
+
+				
+		
 		
 		e.push_back(s);
 		

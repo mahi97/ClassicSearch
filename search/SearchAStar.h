@@ -15,10 +15,6 @@ public:
 
 protected:
 	void search();
-	std::list<State*> f;
-	std::list<State*> e;
-	
-	
 };
 
 

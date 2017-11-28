@@ -28,7 +28,6 @@ public:
 		
 		va_end(ap);
 	}
-	
 	bool operator==(const State& _other) const {
 		for (int i = 0; i < 9 ; i++) {
 			if (puzzle[i] != reinterpret_cast<const PuzzleState&>(_other).puzzle[i]) {
@@ -37,19 +36,20 @@ public:
 		}
 		return true;
 	}
-	
 	int puzzle[9];
-	virtual void name() {};
 };
 
 class ProblemPuzzle : public Problem {
 	virtual State* initialState();
+	virtual State* initialStateR();
 	virtual State* nextState(const State* currentState, const int& action);
+	virtual State* nextStateR(const State* currentState, const int& action);
 	virtual bool goalTest(const State* _state);
-	virtual double pathCost(std::vector<int> path);
+	virtual bool goalTestBidirect(const State* _state);
+	virtual double pathCost(std::list<int> path);
 	virtual std::vector<int> actions(const State* _state);
 	virtual double stepCost(const State* firstState, const int& action, const State* secondState);
-	virtual double h(const State*) {};
+	virtual double h(const State*);
 
 private:
 	void swapPuzzle(int i, int action, PuzzleState*);

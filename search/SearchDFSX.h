@@ -14,10 +14,9 @@ public:
 	SearchDFSX(bool isGraph, unsigned int depth);
 	virtual void execute();
 	void setDepth(int depth);
-	int  getDepth(void);
 protected:
 	void search();
-	void search(const State* par, int depth);
+	void search(State* par, int depth);
 	int depth;
 	
 };

@@ -13,7 +13,6 @@ public:
 	virtual bool operator==(const State&) const = 0;
 	const State* par;
 	int act;
-private:
 };
 
 

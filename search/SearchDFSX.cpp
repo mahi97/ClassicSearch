@@ -17,7 +17,7 @@ void SearchDFSX::execute() {
 	result.pathCost = problem->pathCost(result.path);
 }
 
-void SearchDFSX::search(const State *node, int _depth) {
+void SearchDFSX::search(State *node, int _depth) {
 	if (_depth > this->depth) return;
 	
 	if (problem->goalTest(node)) {
@@ -56,7 +56,4 @@ void SearchDFSX::setDepth(int depth) {
 	this->depth = depth;
 }
 
-int SearchDFSX::getDepth() {
-	return this->depth;
-}
 

@@ -34,6 +34,7 @@ void SearchBFS::search() {
 		}
 		
 		for (auto& action : problem->actions(s)) {
+			result.nodeSeen++;
 			if (isGraph) {
 				bool temp = false;
 				for (auto node : e) {
@@ -44,7 +45,6 @@ void SearchBFS::search() {
 				}
 				if (temp) continue;
 			}
-			result.nodeSeen++;
 			f.push_back(problem->nextState(s, action));
 		}
 		e.push_back(s);

@@ -12,12 +12,8 @@ class SearchUCS : public Search{
 public:
 	SearchUCS(bool isGraph);
 	virtual void execute();
-
 protected:
 	void search();
-	std::list<State*>  f;
-	std::list<State*>  e;
-	
 	
 };
 
